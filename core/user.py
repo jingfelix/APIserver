@@ -14,7 +14,7 @@ def login():
         if not username or not password:
             return jsonify({"msg": "Invalid input."})
 
-        user = User.query.filter_by(username=username).first()
+        user = User.query.filter_by(name=username).first()
 
         if not user:
             return jsonify({"msg": "User does not exist."})
@@ -44,12 +44,12 @@ def register():
         if not username or not password:
             return jsonify({"msg": "Invalid input."})
 
-        user = User.query.filter_by(username=username).first()
+        user = User.query.filter_by(name=username).first()
 
         if user:
             return jsonify({"msg": "User already exists."})
 
-        new_user = User(username=username)
+        new_user = User(name=username)
         new_user.set_password(password)
         db.session.add(new_user)
         db.session.commit()
@@ -68,7 +68,7 @@ def delete():
         if not username or not password:
             return jsonify({"msg": "Invalid input."})
 
-        user = User.query.filter_by(username=username).first()
+        user = User.query.filter_by(name=username).first()
 
         if not user:
             return jsonify({"msg": "User does not exist."})
