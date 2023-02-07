@@ -7,4 +7,6 @@ if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
 from core import app
-app.run(host='0.0.0.0', port=443, debug=True)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080, debug=True)
