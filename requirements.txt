@@ -10,5 +10,5 @@ MarkupSafe==2.1.2
 python-dotenv==0.21.1
 SQLAlchemy==2.0.2
 typing-extensions==4.4.0
-Werkzeug==2.3.3
+Werkzeug==3.0.1
 zipp==3.12.1
